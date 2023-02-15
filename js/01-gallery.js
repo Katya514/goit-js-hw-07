@@ -30,11 +30,11 @@ function openOriginalImg(event) {
     return;
   }
 
-  const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`);
-    //  {
-    //   onShow: () => document.addEventListener("keydown", closeOriginalImg),
-    //   onClose: () => document.removeEventListener("keydown", closeOriginalImg),
-    // };
+  const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`,
+     {
+      onShow: () => document.addEventListener("keydown", closeOriginalImg),
+      onClose: () => document.removeEventListener("keydown", closeOriginalImg),
+    });
     instance.show()
 
   function closeOriginalImg(event) {
